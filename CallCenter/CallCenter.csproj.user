@@ -4,7 +4,7 @@
     <PublishUrlHistory>\\192.168.90.8\Application\|publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>\\192.168.90.8\Application\</UpdateUrlHistory>
     <BootstrapperUrlHistory>\\192.168.90.8\Application</BootstrapperUrlHistory>
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
