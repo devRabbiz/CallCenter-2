@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CallCenter.DAL.QuanTri;
 using CallCenter.GUI.HeThong;
 using CallCenter.GUI.QuanTri;
+using CallCenter.GUI.KhachHang;
 
 namespace CallCenter
 {
@@ -189,6 +190,24 @@ namespace CallCenter
         }
 
         #endregion
+      
+        
+        #region Khách Hàng
+
+        private void mnuKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            OpenForm(frm);
+        }
+
+        private void mnKhachHangGanMoi_Click(object sender, EventArgs e)
+        {
+            frmKhachHangGanMoi frm = new frmKhachHangGanMoi();
+            OpenForm(frm);
+        }
+        #endregion
+
+
 
     }
 }
