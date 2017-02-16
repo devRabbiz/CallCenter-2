@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.625" name="KhachHang">
+  <DataContextMoniker Name="/KhachHangDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6447e552-8e52-45bf-8ced-77eee26a74da" absoluteBounds="3.125, 3, 2, 9.8475569661458326">
+      <DataClassMoniker Name="/KhachHangDataContext/TB_DULIEUKHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85f02830-76fa-4d88-8d53-cb49c2c9c922" absoluteBounds="3.14, 3.46, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="738eb34f-459d-4859-a64d-b25491fc4b61" absoluteBounds="2.375, 2.625, 2, 10.809064127604165">
+      <DataClassMoniker Name="/KhachHangDataContext/TB_DULIEUKHACHHANG_HUYDB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="076e2c88-d003-41bc-aea4-0e5ce9c531aa" absoluteBounds="2.39, 3.085, 1.9700000000000002, 10.249064127604166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3f16a6e-d7d4-491d-b147-ba854cb6f0b5" absoluteBounds="1.25, 2.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/KhachHangDataContext/TB_GHICHU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90f7186b-1be7-424d-8c55-04e94c64c454" absoluteBounds="1.2650000000000001, 2.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
