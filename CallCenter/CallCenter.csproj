@@ -71,6 +71,10 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DevExpress DLL\DevExpress.Data.v13.1.dll</HintPath>
@@ -99,6 +103,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DevExpress DLL\DevExpress.XtraPrinting.v13.1.dll</HintPath>
     </Reference>
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=0ed4c5f2bbf81ac0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\IrisSkin2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -112,6 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\CCallCenter.cs" />
+    <Compile Include="DAL\KhachHang\CGanMoi.cs" />
+    <Compile Include="DAL\KhachHang\CKhachHang.cs" />
     <Compile Include="DAL\QuanTri\CMenu.cs" />
     <Compile Include="DAL\QuanTri\CNguoiDung.cs" />
     <Compile Include="DAL\QuanTri\CNhom.cs" />
@@ -122,6 +132,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbCallCenter.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DocSo.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\GanMoi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GanMoi.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\KhachHang.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KhachHang.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ThuTien.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThuTien.dbml</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -147,6 +177,14 @@
     <Compile Include="GUI\HeThong\frmDoiMatKhau.designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\KhachHang\frmKhachHang.cs" />
+    <Compile Include="GUI\KhachHang\frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KhachHang\frmKhachHangGanMoi.cs" />
+    <Compile Include="GUI\KhachHang\frmKhachHangGanMoi.Designer.cs">
+      <DependentUpon>frmKhachHangGanMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanTri\frmNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,9 +205,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\AddValueCombox.cs" />
+    <Compile Include="Utilities\cNetworkDrive_0017.cs" />
+    <Compile Include="Utilities\DataGridV.cs" />
+    <Compile Include="Utilities\DateToString.cs" />
+    <Compile Include="Utilities\Doctien.cs" />
+    <Compile Include="Utilities\Files.cs" />
+    <Compile Include="Utilities\FormatNumber.cs" />
+    <Compile Include="Utilities\FormatSoHoSoDanhBo.cs" />
+    <Compile Include="Utilities\LogIn.cs" />
+    <Compile Include="Utilities\Strings.cs" />
     <None Include="app.config" />
     <None Include="Database\dbCallCenter.dbml.layout">
       <DependentUpon>dbCallCenter.dbml</DependentUpon>
+    </None>
+    <None Include="Database\DocSo.dbml.layout">
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </None>
+    <None Include="Database\GanMoi.dbml.layout">
+      <DependentUpon>GanMoi.dbml</DependentUpon>
+    </None>
+    <None Include="Database\KhachHang.dbml.layout">
+      <DependentUpon>KhachHang.dbml</DependentUpon>
+    </None>
+    <None Include="Database\ThuTien.dbml.layout">
+      <DependentUpon>ThuTien.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -182,6 +242,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\HeThong\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang\frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang\frmKhachHangGanMoi.resx">
+      <DependentUpon>frmKhachHangGanMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTri\frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
@@ -206,6 +272,26 @@
     <None Include="Database\dbCallCenter.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>dbCallCenter.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\DocSo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocSo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\GanMoi.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GanMoi.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\KhachHang.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>KhachHang.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\ThuTien.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThuTien.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -759,6 +845,10 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\DevComponents.DotNetBar2.dll" />
+    <Content Include="Lib\IrisSkin2.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
