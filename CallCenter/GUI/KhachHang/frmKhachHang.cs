@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CallCenter.DAL.QuanTri;
 using CallCenter.Database;
+using CallCenter.DAL.KhachHang;
 
 namespace CallCenter.GUI.KhachHang
 {
@@ -177,6 +178,25 @@ namespace CallCenter.GUI.KhachHang
             {
                 
             }
+        }
+
+        private void btHoSoGoc_Click(object sender, EventArgs e)
+        {
+            if (CKhachHang.findByHoSoGoc(rDanhBo.Text.Replace("-", "")) != null)
+            {
+                frmViewPdf F = new frmViewPdf(rDanhBo.Text.Replace("-", ""));
+                F.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(this, "Hồ sơ gốc chưa được cập nhật !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btTiepNhanKN_Click(object sender, EventArgs e)
+        {
+            frmDongNuoc  F = new frmDongNuoc();
+            F.ShowDialog();
         }
   
     }

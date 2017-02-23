@@ -120,6 +120,7 @@ namespace CallCenter.DAL.KhachHang
             }
             return null;
         }
+
         public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
         {
             try
@@ -130,6 +131,20 @@ namespace CallCenter.DAL.KhachHang
             }
             catch (Exception ex)
             {
+            }
+            return null;
+        }
+        public static HOSOGOC findByHoSoGoc(string danhbo)
+        {
+            try
+            {
+                dbCallCenterDataContext db = new dbCallCenterDataContext();
+                var query = from q in db.HOSOGOCs where q.DBDongHoNuoc == danhbo orderby q.NgayCapNhat descending select q;
+                return query.First();
+            }
+            catch (Exception ex)
+            {
+               
             }
             return null;
         }

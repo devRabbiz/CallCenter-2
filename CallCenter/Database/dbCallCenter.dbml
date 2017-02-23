@@ -108,4 +108,17 @@
       <Association Name="Nhom_PhanQuyenNhom" Member="Nhom" ThisKey="MaNhom" OtherKey="MaNhom" Type="Nhom" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.HOSOGOC" Member="HOSOGOCs">
+    <Type Name="HOSOGOC">
+      <Column Name="OBJECTID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DBDongHoNuoc" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="MaHoSo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DataBlob" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="NguoiCapNhat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiFile" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenHoSo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
