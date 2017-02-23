@@ -11,10 +11,10 @@ namespace CallCenter.GUI.KhachHang
 {
     public partial class frmDongNuoc : Form
     {
-        public frmDongNuoc()
+        public frmDongNuoc(string dc)
         {
             InitializeComponent();
-            webKitBrowser1.Navigate("http://192.168.1.8/View/dongnuoc.aspx");
+            webKitBrowser1.Navigate("http://hp_g7/callcenter.aspx?add=" + dc);
         }
     }
 }

@@ -33,16 +33,16 @@ namespace CallCenter.GUI.KhachHang
             string db = txtsearchDB.Text.Replace(" ", "").Replace("-", "");
             if (db != "")
             {
-                sql += " AND DANHBO LIKE '" + db.Replace("*", "%") + "' ";
+                sql += " AND DANHBO LIKE '%" + db + "%' ";
             }
 
             if (txtSearchDC.Text.Replace("-", "") != "")
             {
-                sql += " AND DIACHI LIKE '" + txtSearchDC.Text.Replace("*", "%") + "' ";
+                sql += " AND DIACHI LIKE '%" + txtSearchDC.Text  + "%' ";
             }
             if (txtSearchDT.Text.Replace("-", "") != "")
             {
-                sql += " AND DIENTHOAI LIKE '" + txtSearchDT.Text.Replace("*", "%") + "' ";
+                sql += " AND DIENTHOAI LIKE '%" + txtSearchDT.Text  + "%' ";
             }
 
             tb = DAL.KhachHang.CKhachHang.getDataTable(sql);
@@ -195,7 +195,12 @@ namespace CallCenter.GUI.KhachHang
 
         private void btTiepNhanKN_Click(object sender, EventArgs e)
         {
-            frmDongNuoc  F = new frmDongNuoc();
+           
+        }
+
+        private void btDongNuoc_Click(object sender, EventArgs e)
+        {
+            frmDongNuoc F = new frmDongNuoc(this.TENDUONG.Text);
             F.ShowDialog();
         }
   

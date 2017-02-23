@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDienThoai = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
@@ -38,8 +38,6 @@
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btTimKiem = new System.Windows.Forms.Button();
-            this.btLamLai = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +66,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btSearch = new DevComponents.DotNetBar.ButtonX();
             this.lbresult = new DevComponents.DotNetBar.LabelX();
             this.resultNoiDung = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -119,6 +116,8 @@
             this.next = new System.Windows.Forms.PictureBox();
             this.lbPaing = new System.Windows.Forms.Label();
             this.lbsohoso = new System.Windows.Forms.Label();
+            this.btHoSoGoc = new DevComponents.DotNetBar.ButtonX();
+            this.btTiepNhanKN = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -205,27 +204,6 @@
             this.label1.TabIndex = 146;
             this.label1.Text = "Số Hồ Sơ";
             // 
-            // btTimKiem
-            // 
-            this.btTimKiem.Location = new System.Drawing.Point(1178, 4);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(112, 34);
-            this.btTimKiem.TabIndex = 154;
-            this.btTimKiem.Text = "Tìm Kiếm";
-            this.btTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // btLamLai
-            // 
-            this.btLamLai.Location = new System.Drawing.Point(1312, 4);
-            this.btLamLai.Margin = new System.Windows.Forms.Padding(4);
-            this.btLamLai.Name = "btLamLai";
-            this.btLamLai.Size = new System.Drawing.Size(112, 34);
-            this.btLamLai.TabIndex = 155;
-            this.btLamLai.Text = "Làm Lại";
-            this.btLamLai.UseVisualStyleBackColor = true;
-            this.btLamLai.Click += new System.EventHandler(this.btLamLai_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -265,8 +243,8 @@
             // g_SoHoSo
             // 
             this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle9;
             this.g_SoHoSo.HeaderText = "Số HS";
             this.g_SoHoSo.Name = "g_SoHoSo";
             this.g_SoHoSo.ReadOnly = true;
@@ -291,8 +269,8 @@
             // gr_DienThoai
             // 
             this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle10;
             this.gr_DienThoai.HeaderText = "Điện Thoại";
             this.gr_DienThoai.Name = "gr_DienThoai";
             this.gr_DienThoai.ReadOnly = true;
@@ -325,6 +303,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btHoSoGoc);
             this.panel1.Controls.Add(this.buttonX4);
             this.panel1.Controls.Add(this.buttonX2);
             this.panel1.Controls.Add(this.label22);
@@ -597,7 +576,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btSearch);
             this.groupBox2.Controls.Add(this.lbresult);
             this.groupBox2.Controls.Add(this.resultNoiDung);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -608,19 +586,6 @@
             this.groupBox2.TabIndex = 170;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết Quả";
-            // 
-            // btSearch
-            // 
-            this.btSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btSearch.Location = new System.Drawing.Point(840, 22);
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(89, 58);
-            this.btSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btSearch.TabIndex = 137;
-            this.btSearch.Text = "Tiếp Nhận Khiếu Nại Gắn Mới";
             // 
             // lbresult
             // 
@@ -1256,19 +1221,45 @@
             this.lbsohoso.TabIndex = 178;
             this.lbsohoso.Text = "db";
             // 
+            // btHoSoGoc
+            // 
+            this.btHoSoGoc.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btHoSoGoc.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btHoSoGoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHoSoGoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btHoSoGoc.Location = new System.Drawing.Point(821, 359);
+            this.btHoSoGoc.Name = "btHoSoGoc";
+            this.btHoSoGoc.Size = new System.Drawing.Size(123, 32);
+            this.btHoSoGoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btHoSoGoc.TabIndex = 692;
+            this.btHoSoGoc.Text = "HỒ SƠ GỐC";
+            this.btHoSoGoc.Click += new System.EventHandler(this.btHoSoGoc_Click);
+            // 
+            // btTiepNhanKN
+            // 
+            this.btTiepNhanKN.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTiepNhanKN.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTiepNhanKN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTiepNhanKN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btTiepNhanKN.Location = new System.Drawing.Point(1328, 6);
+            this.btTiepNhanKN.Name = "btTiepNhanKN";
+            this.btTiepNhanKN.Size = new System.Drawing.Size(163, 29);
+            this.btTiepNhanKN.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btTiepNhanKN.TabIndex = 179;
+            this.btTiepNhanKN.Text = "Tiếp Nhận Khiếu Nại";
+            // 
             // frmKhachHangGanMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1511, 775);
+            this.Controls.Add(this.btTiepNhanKN);
             this.Controls.Add(this.lbsohoso);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.next);
-            this.Controls.Add(this.btLamLai);
             this.Controls.Add(this.lbPaing);
-            this.Controls.Add(this.btTimKiem);
             this.Controls.Add(this.searchDienThoai);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.SearchMaHoSo);
@@ -1305,8 +1296,6 @@
         private System.Windows.Forms.TextBox searchDiaChi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btTimKiem;
-        private System.Windows.Forms.Button btLamLai;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.Panel panel1;
@@ -1371,7 +1360,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.ButtonX buttonX4;
         private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX btSearch;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox next;
         private System.Windows.Forms.Label lbPaing;
@@ -1386,6 +1374,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
         private DevComponents.DotNetBar.Controls.TextBoxX sodanhbo;
         private System.Windows.Forms.Label label32;
+        private DevComponents.DotNetBar.ButtonX btHoSoGoc;
+        private DevComponents.DotNetBar.ButtonX btTiepNhanKN;
 
     }
 }

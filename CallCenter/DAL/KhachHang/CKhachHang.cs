@@ -134,6 +134,12 @@ namespace CallCenter.DAL.KhachHang
             }
             return null;
         }
+        public static bool checkHoSogoc(string danhbo)
+        {
+            if (DAL.KhachHang.CKhachHang.getDataTable("SELECT DBDongHoNuoc FROM HOSOGOC WHERE DBDongHoNuoc='" + danhbo + "'").Rows.Count > 0)
+                return true;
+            return false;
+        }
         public static HOSOGOC findByHoSoGoc(string danhbo)
         {
             try

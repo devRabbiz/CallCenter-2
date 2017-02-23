@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CallCenter.DAL.QuanTri;
 using CallCenter.Database;
+using CallCenter.DAL.KhachHang;
 
 namespace CallCenter.GUI.KhachHang
 {
@@ -312,7 +313,18 @@ namespace CallCenter.GUI.KhachHang
                                                 }
                                                 else
                                                 {
-                                                    title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                                    if (CKhachHang.checkHoSogoc(hoskh.DHN_SODANHBO) == true)
+                                                    {
+                                                        title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                                       
+                                                    }
+                                                    else
+                                                    {
+                                                        title = "HỒ SƠ CHƯA ĐƯỢC SCAN ";
+                                                    }
+
+                                                   
+
                                                 }
                                                 
                                                 title = "HỒ SƠ ĐÃ LÊN ĐỢT <br/> THI CÔNG";
@@ -395,7 +407,15 @@ namespace CallCenter.GUI.KhachHang
                                             }
                                             else
                                             {
-                                                title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                                if (CKhachHang.checkHoSogoc(hoskh.DHN_SODANHBO) == true)
+                                                {
+                                                    title = "HỒ SƠ ĐÃ HOÀN TẤT";
+
+                                                }
+                                                else
+                                                {
+                                                    title = "HỒ SƠ CHƯA ĐƯỢC SCAN ";
+                                                }
                                             }
                                         }
                                         else
@@ -515,7 +535,15 @@ namespace CallCenter.GUI.KhachHang
                         }
                         else
                         {
-                            title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                            if (CKhachHang.checkHoSogoc(hoskh1.DHN_SODANHBO) == true)
+                            {
+                                title = "HỒ SƠ ĐÃ HOÀN TẤT";
+
+                            }
+                            else
+                            {
+                                title = "HỒ SƠ CHƯA ĐƯỢC SCAN ";
+                            }
                         }                       
                     }
                     else
@@ -570,6 +598,12 @@ namespace CallCenter.GUI.KhachHang
         private void btLamLai_Click(object sender, EventArgs e)
         {
             refesh();
+        }
+
+        private void btHoSoGoc_Click(object sender, EventArgs e)
+        {
+            frmViewPdf F = new frmViewPdf(sodanhbo.Text);
+            F.ShowDialog();
         }
 
 
