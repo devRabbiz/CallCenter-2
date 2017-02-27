@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDienThoai = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
@@ -48,6 +48,7 @@
             this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btHoSoGoc = new DevComponents.DotNetBar.ButtonX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.label22 = new System.Windows.Forms.Label();
@@ -116,7 +117,6 @@
             this.next = new System.Windows.Forms.PictureBox();
             this.lbPaing = new System.Windows.Forms.Label();
             this.lbsohoso = new System.Windows.Forms.Label();
-            this.btHoSoGoc = new DevComponents.DotNetBar.ButtonX();
             this.btTiepNhanKN = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -243,8 +243,8 @@
             // g_SoHoSo
             // 
             this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
             this.g_SoHoSo.HeaderText = "Số HS";
             this.g_SoHoSo.Name = "g_SoHoSo";
             this.g_SoHoSo.ReadOnly = true;
@@ -269,8 +269,8 @@
             // gr_DienThoai
             // 
             this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle2;
             this.gr_DienThoai.HeaderText = "Điện Thoại";
             this.gr_DienThoai.Name = "gr_DienThoai";
             this.gr_DienThoai.ReadOnly = true;
@@ -371,6 +371,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(948, 666);
             this.panel1.TabIndex = 1;
+            // 
+            // btHoSoGoc
+            // 
+            this.btHoSoGoc.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btHoSoGoc.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btHoSoGoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHoSoGoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btHoSoGoc.Location = new System.Drawing.Point(821, 359);
+            this.btHoSoGoc.Name = "btHoSoGoc";
+            this.btHoSoGoc.Size = new System.Drawing.Size(123, 32);
+            this.btHoSoGoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btHoSoGoc.TabIndex = 692;
+            this.btHoSoGoc.Text = "HỒ SƠ GỐC";
+            this.btHoSoGoc.Click += new System.EventHandler(this.btHoSoGoc_Click);
             // 
             // buttonX4
             // 
@@ -1221,20 +1235,6 @@
             this.lbsohoso.TabIndex = 178;
             this.lbsohoso.Text = "db";
             // 
-            // btHoSoGoc
-            // 
-            this.btHoSoGoc.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btHoSoGoc.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btHoSoGoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHoSoGoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHoSoGoc.Location = new System.Drawing.Point(821, 359);
-            this.btHoSoGoc.Name = "btHoSoGoc";
-            this.btHoSoGoc.Size = new System.Drawing.Size(123, 32);
-            this.btHoSoGoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btHoSoGoc.TabIndex = 692;
-            this.btHoSoGoc.Text = "HỒ SƠ GỐC";
-            this.btHoSoGoc.Click += new System.EventHandler(this.btHoSoGoc_Click);
-            // 
             // btTiepNhanKN
             // 
             this.btTiepNhanKN.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -1246,7 +1246,7 @@
             this.btTiepNhanKN.Size = new System.Drawing.Size(163, 29);
             this.btTiepNhanKN.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btTiepNhanKN.TabIndex = 179;
-            this.btTiepNhanKN.Text = "Tiếp Nhận Khiếu Nại";
+            this.btTiepNhanKN.Text = "Tiếp Nhận Thông Tin";
             // 
             // frmKhachHangGanMoi
             // 

@@ -92,6 +92,8 @@ namespace CallCenter.GUI.KhachHang
                     CAP.Text = khachhang.CAP;
                     SOTHAN.Text = khachhang.SOTHANDH;
                     VITRI.Text = khachhang.VITRIDHN;
+                    txtDMA.Text = khachhang.MADMA;
+
                     //CHITHAN.Text = khachhang.CHITHAN;
                     //CHIGOC.Text = khachhang.CHIGOC;
                     //btCapNhatThongTin.Enabled = true;
@@ -195,12 +197,14 @@ namespace CallCenter.GUI.KhachHang
 
         private void btTiepNhanKN_Click(object sender, EventArgs e)
         {
-           
+            frmTiepNhanKN f = new frmTiepNhanKN();
+            f.ShowDialog();
         }
 
         private void btDongNuoc_Click(object sender, EventArgs e)
         {
-            frmDongNuoc F = new frmDongNuoc(this.TENDUONG.Text);
+            string url = "http://hp_g7/callcenter.aspx?add=" + this.TENDUONG.Text;
+            frmWeb F = new frmWeb(url);            
             F.ShowDialog();
         }
   

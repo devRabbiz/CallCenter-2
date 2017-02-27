@@ -1,6 +1,6 @@
 ﻿namespace CallCenter.GUI.KhachHang
 {
-    partial class frmDongNuoc
+    partial class frmWeb
     {
         /// <summary>
         /// Required designer variable.
@@ -41,14 +41,14 @@
             this.webKitBrowser1.TabIndex = 0;
             this.webKitBrowser1.Url = null;
             // 
-            // frmDongNuoc
+            // frmWeb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 665);
             this.Controls.Add(this.webKitBrowser1);
-            this.Name = "frmDongNuoc";
-            this.Text = "frmDongNuoc";
+            this.Name = "frmWeb";
+            this.Text = "Web Browser";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 

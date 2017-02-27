@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace CallCenter.GUI.KhachHang
 {
-    public partial class frmDongNuoc : Form
+    public partial class frmWeb : Form
     {
-        public frmDongNuoc(string dc)
+        public frmWeb(string dc)
         {
             InitializeComponent();
-            webKitBrowser1.Navigate("http://hp_g7/callcenter.aspx?add=" + dc);
+            webKitBrowser1.Navigate(dc);
         }
     }
 }

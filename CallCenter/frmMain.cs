@@ -207,6 +207,13 @@ namespace CallCenter
         }
         #endregion
 
+        private void mnBaoBe_Click(object sender, EventArgs e)
+        {
+            frmWeb frm = new frmWeb("http://hp_g7/callBaoBe.aspx");
+            frm.Name = "Báo Bể";
+            OpenForm(frm);
+        }
+
 
 
     }

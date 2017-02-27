@@ -107,6 +107,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\IrisSkin2.dll</HintPath>
     </Reference>
+    <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\String_Indentity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -180,11 +184,17 @@
     <Compile Include="GUI\HeThong\frmDoiMatKhau.designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\KhachHang\frmDongNuoc.cs">
+    <Compile Include="GUI\KhachHang\frmBaoBe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\KhachHang\frmDongNuoc.Designer.cs">
-      <DependentUpon>frmDongNuoc.cs</DependentUpon>
+    <Compile Include="GUI\KhachHang\frmBaoBe.Designer.cs">
+      <DependentUpon>frmBaoBe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KhachHang\frmWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KhachHang\frmWeb.Designer.cs">
+      <DependentUpon>frmWeb.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\KhachHang\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -197,6 +207,12 @@
     </Compile>
     <Compile Include="GUI\KhachHang\frmKhachHangGanMoi.Designer.cs">
       <DependentUpon>frmKhachHangGanMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KhachHang\frmTiepNhanKN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KhachHang\frmTiepNhanKN.Designer.cs">
+      <DependentUpon>frmTiepNhanKN.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\KhachHang\frmViewPdf.cs">
       <SubType>Form</SubType>
@@ -263,14 +279,20 @@
     <EmbeddedResource Include="GUI\HeThong\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\KhachHang\frmDongNuoc.resx">
-      <DependentUpon>frmDongNuoc.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\KhachHang\frmBaoBe.resx">
+      <DependentUpon>frmBaoBe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang\frmWeb.resx">
+      <DependentUpon>frmWeb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\frmKhachHangGanMoi.resx">
       <DependentUpon>frmKhachHangGanMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang\frmTiepNhanKN.resx">
+      <DependentUpon>frmTiepNhanKN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\frmViewPdf.resx">
       <DependentUpon>frmViewPdf.cs</DependentUpon>
@@ -876,6 +898,7 @@
   <ItemGroup>
     <Content Include="Lib\DevComponents.DotNetBar2.dll" />
     <Content Include="Lib\IrisSkin2.dll" />
+    <Content Include="Lib\String_Indentity.dll" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AcroPDFLib">

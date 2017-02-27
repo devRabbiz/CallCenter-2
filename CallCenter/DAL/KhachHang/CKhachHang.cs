@@ -97,7 +97,7 @@ namespace CallCenter.DAL.KhachHang
             return ds.Tables["TIEUTHU"];
         }
 
-        public static DataTable search(string diachi,string dit)
+        public static DataTable search(string diachi, string dit)
         {
             DataTable tb = new DataTable();
             string sql = "SELECT DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH, HOTEN,HOPDONG,HIEUDH,CODH,SOTHANDH,(CONVERT(VARCHAR,KY)+'/'+CONVERT(VARCHAR,NAM) ) AS N'HL'  , YEAR(NGAYTHAY) AS N'NĂM GẮN' FROM TB_DULIEUKHACHHANG WHERE (SONHA+' '+ TENDUONG) LIKE '" + diachi.Replace("*", "%") + "' ORDER BY LOTRINH ASC ";
@@ -140,6 +140,7 @@ namespace CallCenter.DAL.KhachHang
                 return true;
             return false;
         }
+
         public static HOSOGOC findByHoSoGoc(string danhbo)
         {
             try
@@ -150,9 +151,57 @@ namespace CallCenter.DAL.KhachHang
             }
             catch (Exception ex)
             {
-               
+
             }
             return null;
+        }
+
+        public static string IdentityBienNhan()
+        {
+            string loaihs = "CT";
+            string year = DateTime.Now.Year.ToString().Substring(2);
+            string kytumacdinh = year + loaihs;
+
+
+            string id = kytumacdinh + "000001";
+            try
+            {
+
+                String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
+                dbCallCenterDataContext db = new dbCallCenterDataContext();
+                db.Connection.Open();
+                string sql = " SELECT MAX(SoHoSo) as 'SoHoSo' FROM TiepNhan    ORDER BY SoHoSo DESC";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    if (table.Rows[0][0].ToString().Trim().Substring(0, 2).Equals(year))
+                    {
+                        int number = 1;
+                         
+                        id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "000000", number) + "";
+                    }
+                    else
+                    {
+                        id = obj.ID(year + loaihs, year + loaihs + "000000", "000000") + "";
+                    }
+                }
+                else
+                {
+                    id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "000000") + "";
+                }
+
+                db.Connection.Close();
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+            return id;
+
         }
     }
 }
