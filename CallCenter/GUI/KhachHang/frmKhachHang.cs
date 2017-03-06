@@ -66,6 +66,7 @@ namespace CallCenter.GUI.KhachHang
             }
         }
 
+      
         TB_DULIEUKHACHHANG khachhang = null;
         void LoadThongTinDB(string sodanhbo)
         {
@@ -76,7 +77,7 @@ namespace CallCenter.GUI.KhachHang
                 {
                     rDanhBo.Text = khachhang.DANHBO;
                     LOTRINH.Text = khachhang.LOTRINH;
-                    DOT.Text = khachhang.DOT;
+                    DOT.Text = khachhang.LOTRINH.Substring(1,2);
                     HOPDONG.Text = khachhang.HOPDONG;
                     HOTEN.Text = khachhang.HOTEN;
                     TENDUONG.Text =khachhang.SONHA + ' ' + khachhang.TENDUONG;
@@ -93,14 +94,11 @@ namespace CallCenter.GUI.KhachHang
                     SOTHAN.Text = khachhang.SOTHANDH;
                     VITRI.Text = khachhang.VITRIDHN;
                     txtDMA.Text = khachhang.MADMA;
-
-                    //CHITHAN.Text = khachhang.CHITHAN;
-                    //CHIGOC.Text = khachhang.CHIGOC;
-                    //btCapNhatThongTin.Enabled = true;
+                    txtNhanVienDocSo.Text = CKhachHang.getNVDS(khachhang.LOTRINH.Substring(3, 2));
+                    
                     loadghichu(khachhang.DANHBO);
                     loadHoaDon(khachhang.DANHBO);
                     loadDongNuoc(khachhang.DANHBO);
-                   // txtGhiChu.Text = "";
                 }
                 else
                 {
@@ -197,7 +195,8 @@ namespace CallCenter.GUI.KhachHang
 
         private void btTiepNhanKN_Click(object sender, EventArgs e)
         {
-            frmTiepNhanKN f = new frmTiepNhanKN();
+            string db = rDanhBo.Text.Replace("-", "");
+            frmTiepNhanKN f = new frmTiepNhanKN(db,"KH");
             f.ShowDialog();
         }
 

@@ -156,52 +156,25 @@ namespace CallCenter.DAL.KhachHang
             return null;
         }
 
-        public static string IdentityBienNhan()
+        public static string getNVDS(string may)
         {
-            string loaihs = "CT";
-            string year = DateTime.Now.Year.ToString().Substring(2);
-            string kytumacdinh = year + loaihs;
-
-
-            string id = kytumacdinh + "000001";
             try
             {
+                DocSoDataContext db = new DocSoDataContext();
+                DataSet ds = new DataSet();
 
-                String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
-                dbCallCenterDataContext db = new dbCallCenterDataContext();
-                db.Connection.Open();
-                string sql = " SELECT MAX(SoHoSo) as 'SoHoSo' FROM TiepNhan    ORDER BY SoHoSo DESC";
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                if (table.Rows.Count > 0)
-                {
-                    if (table.Rows[0][0].ToString().Trim().Substring(0, 2).Equals(year))
-                    {
-                        int number = 1;
-                         
-                        id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "000000", number) + "";
-                    }
-                    else
-                    {
-                        id = obj.ID(year + loaihs, year + loaihs + "000000", "000000") + "";
-                    }
-                }
-                else
-                {
-                    id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "000000") + "";
-                }
+                string query = " SELECT NhanVienID ";
+                query += "  FROM MayDS   ";
+                query += " WHERE May=  '" + may + "' ";
 
-                db.Connection.Close();
-
+                SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+                return ds.Tables[0].Rows[0][0].ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
-
-            return id;
-
+            return "";
         }
     }
 }

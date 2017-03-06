@@ -214,6 +214,12 @@ namespace CallCenter
             OpenForm(frm);
         }
 
+        private void mnuDonTiepNhan_Click(object sender, EventArgs e)
+        {
+            frmDanhSachKN frm = new frmDanhSachKN();
+            OpenForm(frm);
+        }
+
 
 
     }

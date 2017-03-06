@@ -74,6 +74,7 @@
       <Association Name="DON_KHACHHANG_BG_CONGTACBANGIA" Member="BG_CONGTACBANGIAs" ThisKey="SHS" OtherKey="SHS" Type="BG_CONGTACBANGIA" />
       <Association Name="DON_KHACHHANG_BG_KICHTHUOCPHUIDAO" Member="BG_KICHTHUOCPHUIDAOs" ThisKey="SHS" OtherKey="SHS" Type="BG_KICHTHUOCPHUIDAO" />
       <Association Name="DON_KHACHHANG_BG_KHOILUONGXDCB" Member="BG_KHOILUONGXDCBs" ThisKey="SHS" OtherKey="SHS" Type="BG_KHOILUONGXDCB" />
+      <Association Name="QUAN_DON_KHACHHANG" Member="QUAN1" ThisKey="QUAN" OtherKey="MAQUAN" Type="QUAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs">
@@ -423,6 +424,32 @@
       <Column Name="NGAYCHUYEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="GHICHUTR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHUONG" Member="PHUONGs">
+    <Type Name="PHUONG">
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAPHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENPHUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QUAN_PHUONG" Member="QUAN" ThisKey="MAQUAN" OtherKey="MAQUAN" Type="QUAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUAN" Member="QUANs">
+    <Type Name="QUAN">
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENQUAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QUAN_DON_KHACHHANG" Member="DON_KHACHHANGs" ThisKey="MAQUAN" OtherKey="QUAN" Type="DON_KHACHHANG" />
+      <Association Name="QUAN_PHUONG" Member="PHUONGs" ThisKey="MAQUAN" OtherKey="MAQUAN" Type="PHUONG" />
+      <Association Name="QUAN_TENDUONG" Member="TENDUONGs" ThisKey="MAQUAN" OtherKey="MAQUAN" Type="TENDUONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TENDUONG" Member="TENDUONGs">
+    <Type Name="TENDUONG">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MAPHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="QUAN_TENDUONG" Member="QUAN" ThisKey="MAQUAN" OtherKey="MAQUAN" Type="QUAN" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

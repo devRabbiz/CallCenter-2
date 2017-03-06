@@ -84,8 +84,6 @@
             this.VITRI = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CAP = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.CO = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtLuuLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDMA = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.HIEUDH = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX22 = new DevComponents.DotNetBar.LabelX();
@@ -98,8 +96,6 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -135,6 +131,8 @@
             this.G_TIEUTHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIENNUOCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THANTOANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.txtNhanVienDocSo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -323,6 +321,7 @@
             this.groupControl1.Controls.Add(this.KIEMDINH);
             this.groupControl1.Controls.Add(this.NGAYGAN);
             this.groupControl1.Controls.Add(this.HOTEN);
+            this.groupControl1.Controls.Add(this.txtNhanVienDocSo);
             this.groupControl1.Controls.Add(this.SOTHAN);
             this.groupControl1.Controls.Add(this.DINHMUC);
             this.groupControl1.Controls.Add(this.GIABIEU);
@@ -334,8 +333,6 @@
             this.groupControl1.Controls.Add(this.VITRI);
             this.groupControl1.Controls.Add(this.CAP);
             this.groupControl1.Controls.Add(this.CO);
-            this.groupControl1.Controls.Add(this.txtLuuLuong);
-            this.groupControl1.Controls.Add(this.textBoxX1);
             this.groupControl1.Controls.Add(this.txtDMA);
             this.groupControl1.Controls.Add(this.HIEUDH);
             this.groupControl1.Controls.Add(this.labelX22);
@@ -348,8 +345,7 @@
             this.groupControl1.Controls.Add(this.labelX17);
             this.groupControl1.Controls.Add(this.labelX19);
             this.groupControl1.Controls.Add(this.labelX11);
-            this.groupControl1.Controls.Add(this.labelX6);
-            this.groupControl1.Controls.Add(this.labelX4);
+            this.groupControl1.Controls.Add(this.labelX7);
             this.groupControl1.Controls.Add(this.labelX1);
             this.groupControl1.Controls.Add(this.labelX8);
             this.groupControl1.Controls.Add(this.labelX5);
@@ -362,7 +358,7 @@
             this.groupControl1.Controls.Add(this.labelX13);
             this.groupControl1.Location = new System.Drawing.Point(7, 19);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(819, 246);
+            this.groupControl1.Size = new System.Drawing.Size(819, 253);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
@@ -676,36 +672,6 @@
             this.CO.TabIndex = 143;
             this.CO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtLuuLuong
-            // 
-            this.txtLuuLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            // 
-            // 
-            // 
-            this.txtLuuLuong.Border.Class = "TextBoxBorder";
-            this.txtLuuLuong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuuLuong.ForeColor = System.Drawing.Color.Red;
-            this.txtLuuLuong.Location = new System.Drawing.Point(519, 209);
-            this.txtLuuLuong.Name = "txtLuuLuong";
-            this.txtLuuLuong.Size = new System.Drawing.Size(80, 27);
-            this.txtLuuLuong.TabIndex = 142;
-            this.txtLuuLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.ForeColor = System.Drawing.Color.Red;
-            this.textBoxX1.Location = new System.Drawing.Point(330, 209);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(80, 27);
-            this.textBoxX1.TabIndex = 142;
-            this.textBoxX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtDMA
             // 
             this.txtDMA.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -819,24 +785,6 @@
             this.labelX11.Size = new System.Drawing.Size(31, 22);
             this.labelX11.TabIndex = 164;
             this.labelX11.Text = "CỠ";
-            // 
-            // labelX6
-            // 
-            this.labelX6.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.labelX6.Location = new System.Drawing.Point(416, 213);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(145, 22);
-            this.labelX6.TabIndex = 168;
-            this.labelX6.Text = "LƯU LƯỢNG";
-            // 
-            // labelX4
-            // 
-            this.labelX4.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.labelX4.Location = new System.Drawing.Point(265, 214);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(145, 22);
-            this.labelX4.TabIndex = 168;
-            this.labelX4.Text = "ÁP LỰC";
             // 
             // labelX1
             // 
@@ -958,9 +906,9 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.lichsuGhiCHu);
-            this.groupControl2.Location = new System.Drawing.Point(7, 271);
+            this.groupControl2.Location = new System.Drawing.Point(7, 278);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(819, 212);
+            this.groupControl2.Size = new System.Drawing.Size(819, 205);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "LỊCH SỬ ĐIỀU CHỈNH THÔNG TIN ";
             // 
@@ -979,7 +927,7 @@
             this.lichsuGhiCHu.Location = new System.Drawing.Point(2, 21);
             this.lichsuGhiCHu.Name = "lichsuGhiCHu";
             this.lichsuGhiCHu.RowHeadersWidth = 20;
-            this.lichsuGhiCHu.Size = new System.Drawing.Size(815, 189);
+            this.lichsuGhiCHu.Size = new System.Drawing.Size(815, 182);
             this.lichsuGhiCHu.TabIndex = 1;
             // 
             // ID
@@ -1234,6 +1182,29 @@
             this.THANTOANH.Name = "THANTOANH";
             this.THANTOANH.Width = 110;
             // 
+            // labelX7
+            // 
+            this.labelX7.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.labelX7.Location = new System.Drawing.Point(277, 214);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(181, 22);
+            this.labelX7.TabIndex = 168;
+            this.labelX7.Text = "NHÂN VIÊN ĐỌC SỐ";
+            // 
+            // txtNhanVienDocSo
+            // 
+            // 
+            // 
+            // 
+            this.txtNhanVienDocSo.Border.Class = "TextBoxBorder";
+            this.txtNhanVienDocSo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhanVienDocSo.ForeColor = System.Drawing.Color.Red;
+            this.txtNhanVienDocSo.Location = new System.Drawing.Point(454, 208);
+            this.txtNhanVienDocSo.Name = "txtNhanVienDocSo";
+            this.txtNhanVienDocSo.Size = new System.Drawing.Size(352, 27);
+            this.txtNhanVienDocSo.TabIndex = 145;
+            this.txtNhanVienDocSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1355,12 +1326,10 @@
         private DevComponents.DotNetBar.ButtonX btHoSoGoc;
         private DevComponents.DotNetBar.ButtonX btTiepNhanKN;
         private DevComponents.DotNetBar.ButtonX btDongNuoc;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtLuuLuong;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDMA;
-        private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNhanVienDocSo;
+        private DevComponents.DotNetBar.LabelX labelX7;
 
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using CallCenter.Database;
 using System.Data;
 using System.Reflection;
+using System.Data.SqlClient;
 
 namespace CallCenter.DAL
 {
@@ -63,5 +64,88 @@ namespace CallCenter.DAL
         {
             _db = new dbCallCenterDataContext();
         }
+        public static int ExecuteCommand(string sql)
+        {
+            int result = 0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(_db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                _db.Connection.Close();
+                _db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+            _db.SubmitChanges();
+            return result;
+        }
+
+        public static int ExecuteCommand_(string sql)
+        {
+            int result = 0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(_db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                conn.Close();
+                _db.Connection.Close();
+                _db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                 
+
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+            _db.SubmitChanges();
+            return result;
+        }
+        public static DataTable getDataTable(string sql)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Open)
+                {
+                    _db.Connection.Close();
+                }
+                _db.Connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, _db.Connection.ConnectionString);
+                adapter.Fill(table);
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+            return table;
+        }
+       
     }
 }

@@ -72,6 +72,14 @@ namespace CallCenter.Database
 				return this.GetTable<DocSo>();
 			}
 		}
+		
+		public System.Data.Linq.Table<MayD> MayDs
+		{
+			get
+			{
+				return this.GetTable<MayD>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DocSo")]
@@ -1692,6 +1700,87 @@ namespace CallCenter.Database
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MayDS")]
+	public partial class MayD
+	{
+		
+		private string _May;
+		
+		private string _TenMay;
+		
+		private string _ToID;
+		
+		private string _NhanVienID;
+		
+		public MayD()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_May", DbType="VarChar(50)")]
+		public string May
+		{
+			get
+			{
+				return this._May;
+			}
+			set
+			{
+				if ((this._May != value))
+				{
+					this._May = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50)")]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					this._TenMay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ToID", DbType="VarChar(50)")]
+		public string ToID
+		{
+			get
+			{
+				return this._ToID;
+			}
+			set
+			{
+				if ((this._ToID != value))
+				{
+					this._ToID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NhanVienID", DbType="NVarChar(50)")]
+		public string NhanVienID
+		{
+			get
+			{
+				return this._NhanVienID;
+			}
+			set
+			{
+				if ((this._NhanVienID != value))
+				{
+					this._NhanVienID = value;
+				}
 			}
 		}
 	}

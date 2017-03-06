@@ -70,4 +70,12 @@
       <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.MayDS" Member="MayDs">
+    <Type Name="MayD">
+      <Column Name="May" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ToID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NhanVienID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
