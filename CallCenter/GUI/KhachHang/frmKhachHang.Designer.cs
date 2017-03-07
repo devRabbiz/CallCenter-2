@@ -73,6 +73,7 @@
             this.KIEMDINH = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.NGAYGAN = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.HOTEN = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNhanVienDocSo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SOTHAN = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.DINHMUC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GIABIEU = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -96,6 +97,7 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -131,8 +133,6 @@
             this.G_TIEUTHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIENNUOCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THANTOANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.txtNhanVienDocSo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -517,6 +517,20 @@
             this.HOTEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.HOTEN.WatermarkColor = System.Drawing.Color.Transparent;
             // 
+            // txtNhanVienDocSo
+            // 
+            // 
+            // 
+            // 
+            this.txtNhanVienDocSo.Border.Class = "TextBoxBorder";
+            this.txtNhanVienDocSo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhanVienDocSo.ForeColor = System.Drawing.Color.Red;
+            this.txtNhanVienDocSo.Location = new System.Drawing.Point(454, 208);
+            this.txtNhanVienDocSo.Name = "txtNhanVienDocSo";
+            this.txtNhanVienDocSo.Size = new System.Drawing.Size(352, 27);
+            this.txtNhanVienDocSo.TabIndex = 145;
+            this.txtNhanVienDocSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // SOTHAN
             // 
             // 
@@ -786,6 +800,15 @@
             this.labelX11.TabIndex = 164;
             this.labelX11.Text = "CỠ";
             // 
+            // labelX7
+            // 
+            this.labelX7.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.labelX7.Location = new System.Drawing.Point(277, 214);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(181, 22);
+            this.labelX7.TabIndex = 168;
+            this.labelX7.Text = "NHÂN VIÊN ĐỌC SỐ";
+            // 
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 13F);
@@ -895,7 +918,7 @@
             this.btTiepNhanKN.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTiepNhanKN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTiepNhanKN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btTiepNhanKN.Location = new System.Drawing.Point(1204, 6);
+            this.btTiepNhanKN.Location = new System.Drawing.Point(1235, 9);
             this.btTiepNhanKN.Name = "btTiepNhanKN";
             this.btTiepNhanKN.Size = new System.Drawing.Size(163, 29);
             this.btTiepNhanKN.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -1181,29 +1204,6 @@
             this.THANTOANH.HeaderText = "THU TIỀN";
             this.THANTOANH.Name = "THANTOANH";
             this.THANTOANH.Width = 110;
-            // 
-            // labelX7
-            // 
-            this.labelX7.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.labelX7.Location = new System.Drawing.Point(277, 214);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(181, 22);
-            this.labelX7.TabIndex = 168;
-            this.labelX7.Text = "NHÂN VIÊN ĐỌC SỐ";
-            // 
-            // txtNhanVienDocSo
-            // 
-            // 
-            // 
-            // 
-            this.txtNhanVienDocSo.Border.Class = "TextBoxBorder";
-            this.txtNhanVienDocSo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhanVienDocSo.ForeColor = System.Drawing.Color.Red;
-            this.txtNhanVienDocSo.Location = new System.Drawing.Point(454, 208);
-            this.txtNhanVienDocSo.Name = "txtNhanVienDocSo";
-            this.txtNhanVienDocSo.Size = new System.Drawing.Size(352, 27);
-            this.txtNhanVienDocSo.TabIndex = 145;
-            this.txtNhanVienDocSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmKhachHang
             // 

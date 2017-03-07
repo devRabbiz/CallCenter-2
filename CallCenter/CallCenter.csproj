@@ -70,6 +70,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>B %288%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -898,6 +901,8 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="B %288%29.ico" />
+    <Content Include="Lib\B %288%29.ico" />
     <Content Include="Lib\DevComponents.DotNetBar2.dll" />
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\String_Indentity.dll" />

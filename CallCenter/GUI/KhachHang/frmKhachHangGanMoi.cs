@@ -212,11 +212,14 @@ namespace CallCenter.GUI.KhachHang
                 this.lbresult.Text = title;
             }
         }
+        string shs = "";
         #region Result
         void Result(DON_KHACHHANG donkh)
         {
             if (donkh != null)
             {
+                shs = donkh.SHS;
+
                 this.txtNgayDongTien.Text = donkh.NGAYDONGTIEN != null ? Utilities.DateToString.NgayVNVN(donkh.NGAYDONGTIEN.Value) : "";
                 SoTienDong.Text = String.Format("{0:0,0}", donkh.SOTIEN != null ? donkh.SOTIEN : 0.0).Replace(",",".");
                 this.DotNhanDon.Text = donkh.MADOT;
@@ -604,6 +607,12 @@ namespace CallCenter.GUI.KhachHang
         {
             frmViewPdf F = new frmViewPdf(sodanhbo.Text);
             F.ShowDialog();
+        }
+
+        private void btTiepNhanKN_Click(object sender, EventArgs e)
+        {
+            frmTiepNhanKN f = new frmTiepNhanKN(shs, "GM");
+            f.ShowDialog();
         }
 
 

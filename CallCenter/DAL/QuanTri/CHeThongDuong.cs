@@ -211,6 +211,18 @@ namespace CallCenter.DAL.QuanTri
             return list;
         }
 
+        public static ArrayList getListPhuong(int quan)
+        {
+            ArrayList list = new ArrayList();
+            GanMoiDataContext data = new GanMoiDataContext();
+            var lisPhuong = from phuong in data.PHUONGs where phuong.MAQUAN == quan select phuong;
+            foreach (var a in lisPhuong)
+            {
+                list.Add(new AddValueCombox(a.TENPHUONG, a.MAPHUONG));
+            }
+            return list;
+        }
+
         public static ArrayList getListQUAN()
         {
             ArrayList list = new ArrayList();
@@ -246,6 +258,21 @@ namespace CallCenter.DAL.QuanTri
             GanMoiDataContext data = new GanMoiDataContext();
             var quan = from q in data.QUANs where q.TENQUAN == tenquan select q;
             return quan.SingleOrDefault();
+        }
+
+        public static List<QUAN> ListQuan()
+        {
+            GanMoiDataContext db = new GanMoiDataContext();
+            var data = from phuong in db.QUANs select phuong;
+
+            return data.ToList(); ;
+        }
+        public static List<PHUONG> ListPhuong(int quan)
+        {
+            GanMoiDataContext db = new GanMoiDataContext();
+            var data = from phuong in db.PHUONGs where phuong.MAQUAN==quan select phuong;
+
+            return data.ToList(); ;
         }
     }
 }

@@ -80,6 +80,27 @@ namespace CallCenter.DAL.KhachHang
             return null;
         }
 
+        public static BIENNHANDON searchBienNhan(string sohoso)
+        {
+            try
+            {
+                GanMoiDataContext db = new GanMoiDataContext();
+                var data = from don in db.BIENNHANDONs where don.SHS == sohoso select don;
+                BIENNHANDON donkh = data.SingleOrDefault();
+                //if (donkh.HOSOCHA != null)
+                //{
+                //    var hosocha = from don in db.DON_KHACHHANGs where don.SHS == donkh.HOSOCHA select don;
+                //    return hosocha.SingleOrDefault();
+                //}
+                return donkh;
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
+        }
+
+
         public static DataTable TimBienNhan(string shs, string hoten, string diachi, int FirstRow, int pageSize, string dienthoai)
         {
             string sql = "SELECT  biennhan.SHS, biennhan.HOTEN,( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) as 'DIACHI', DIENTHOAI ,CONVERT(VARCHAR(20),biennhan.NGAYNHAN,103) AS 'NGAYNHAN',lhs.TENLOAI as 'LOAIHS' ";

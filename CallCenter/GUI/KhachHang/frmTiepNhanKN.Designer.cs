@@ -42,7 +42,7 @@
             this.txtTenKH = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtsonha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDuong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.Quan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.cbLoaiTiepNhan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -115,7 +115,6 @@
             this.txtGhiChu.Size = new System.Drawing.Size(451, 145);
             this.txtGhiChu.TabIndex = 9;
             this.txtGhiChu.Text = "";
-            this.txtGhiChu.TextChanged += new System.EventHandler(this.txtGhiChu_TextChanged);
             // 
             // labelX2
             // 
@@ -207,18 +206,20 @@
             this.txtDuong.TabIndex = 5;
             this.txtDuong.Leave += new System.EventHandler(this.txtDuong_Leave);
             // 
-            // Quan
+            // cbQuan
             // 
-            this.Quan.DisplayMember = "Text";
-            this.Quan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Quan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Quan.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.Quan.FormattingEnabled = true;
-            this.Quan.ItemHeight = 20;
-            this.Quan.Location = new System.Drawing.Point(319, 212);
-            this.Quan.Name = "Quan";
-            this.Quan.Size = new System.Drawing.Size(188, 26);
-            this.Quan.TabIndex = 7;
+            this.cbQuan.DisplayMember = "Text";
+            this.cbQuan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuan.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.cbQuan.FormattingEnabled = true;
+            this.cbQuan.ItemHeight = 20;
+            this.cbQuan.Location = new System.Drawing.Point(319, 212);
+            this.cbQuan.Name = "cbQuan";
+            this.cbQuan.Size = new System.Drawing.Size(188, 26);
+            this.cbQuan.TabIndex = 7;
+            this.cbQuan.SelectedIndexChanged += new System.EventHandler(this.cbQuan_SelectedIndexChanged);
+            this.cbQuan.ValueMemberChanged += new System.EventHandler(this.cbQuan_ValueMemberChanged);
             // 
             // cbPhuong
             // 
@@ -288,7 +289,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 504);
             this.Controls.Add(this.labelX7);
-            this.Controls.Add(this.Quan);
+            this.Controls.Add(this.cbQuan);
             this.Controls.Add(this.cbLoaiTiepNhan);
             this.Controls.Add(this.cbPhuong);
             this.Controls.Add(this.labelX6);
@@ -330,7 +331,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtTenKH;
         private DevComponents.DotNetBar.Controls.TextBoxX txtsonha;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDuong;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx Quan;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbQuan;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbPhuong;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiTiepNhan;

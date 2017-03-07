@@ -25,34 +25,46 @@ namespace CallCenter.GUI.KhachHang
             fLoad(loaikh);
             if ("KH".Equals(loaikh))
             {
-                loadDanhBo();
+                TB_DULIEUKHACHHANG khachhang = DAL.KhachHang.CKhachHang.finByDanhBo(danhbo);
+                if (khachhang != null)
+                {
+                    txtSoDanhBo.Text = khachhang.DANHBO;
+                    txtTenKH.Text = khachhang.HOTEN;
+                    txtsonha.Text = khachhang.SONHA;
+                    txtDuong.Text = khachhang.TENDUONG;
+                    txtDienThoai.Text = khachhang.DIENTHOAI;
+                  
+                    cbQuan.SelectedValue = khachhang.QUAN;
+
+                     cbPhuong.SelectedValue = khachhang.PHUONG;
+                }
             }
-
-        }
-        public void loadDanhBo()
-        {
-
-            TB_DULIEUKHACHHANG khachhang = DAL.KhachHang.CKhachHang.finByDanhBo(danhbo);
-            if (khachhang != null)
+            else if ("GM".Equals(loaikh))
             {
-                txtSoDanhBo.Text = khachhang.DANHBO;
-                txtTenKH.Text = khachhang.HOTEN;
-                txtsonha.Text = khachhang.SONHA;
-                txtDuong.Text = khachhang.TENDUONG;
-                txtDienThoai.Text = khachhang.DIENTHOAI;
-                cbPhuong.SelectedValue = khachhang.PHUONG;
-                Quan.SelectedValue = khachhang.QUAN;
+                BIENNHANDON donkh = DAL.KhachHang.CGanMoi.searchBienNhan(danhbo);
+                if (donkh != null)
+                 {
+                     txtSoDanhBo.Text = donkh.SHS;
+                     txtTenKH.Text = donkh.HOTEN;
+                     txtsonha.Text = donkh.SONHA;
+                     txtDuong.Text = donkh.DUONG;
+                     txtDienThoai.Text = donkh.DIENTHOAI;
+                     QUAN q = CHeThongDuong.finByMaQuan(donkh.QUAN);
+                     cbQuan.Text = q.TENQUAN;
+                     cbPhuong.Text = CHeThongDuong.finbyPhuong(q.MAQUAN, donkh.PHUONG).TENPHUONG;
+                 }
 
-                //lDuong();
             }
+
         }
+       
         public void lDuong()
         {
             DataTable table = CHeThongDuong.getQuanPhuong(this.txtDuong.Text);
             if (table.Rows.Count > 0)
             {
                 this.cbPhuong.SelectedText = table.Rows[0][0].ToString();
-                this.Quan.SelectedText = table.Rows[0][1].ToString();
+                this.cbQuan.SelectedText = table.Rows[0][1].ToString();
             }
         }
 
@@ -74,12 +86,13 @@ namespace CallCenter.GUI.KhachHang
                 txtDuong.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 txtDuong.AutoCompleteCustomSource = namesCollection;
 
-                this.cbPhuong.DataSource = CHeThongDuong.getListPhuong();
-                this.cbPhuong.DisplayMember = "Display";
-                this.cbPhuong.ValueMember = "Value";
-                Quan.DataSource = CHeThongDuong.getListQUAN();
-                Quan.DisplayMember = "Display";
-                Quan.ValueMember = "Value";
+                //this.cbPhuong.DataSource = CHeThongDuong.getListPhuong();
+                //this.cbPhuong.DisplayMember = "Display";
+                //this.cbPhuong.ValueMember = "Value";
+
+                cbQuan.DataSource = CHeThongDuong.getListQUAN();
+                cbQuan.DisplayMember = "Display";
+                cbQuan.ValueMember = "Value";
 
 
 
@@ -105,20 +118,20 @@ namespace CallCenter.GUI.KhachHang
 
         private void cbPhuong_SelectedValueChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    List<PHUONG> phuong = CHeThongDuong.ListPhuongByTenPhuong(this.cbPhuong.Text);
-            //    if (phuong.Count > 0)
-            //    {
-            //        PHUONG p = phuong[0];
-            //        Quan.SelectedValue = p.QUAN.MAQUAN;
+            try
+            {
+                List<PHUONG> phuong = CHeThongDuong.ListPhuongByTenPhuong(this.cbPhuong.Text);
+                if (phuong.Count > 0)
+                {
+                    PHUONG p = phuong[0];
+                    cbQuan.Text = p.QUAN.TENQUAN;
 
-            //    }
-            //}
-            //catch (Exception)
-            //{
+                }
+            }
+            catch (Exception)
+            {
 
-            //}
+            }
         }
 
         private void btTiepNhan_Click(object sender, EventArgs e)
@@ -132,7 +145,7 @@ namespace CallCenter.GUI.KhachHang
             tn.SoNha = this.txtsonha.Text;
             tn.TenDuong = this.txtDuong.Text;
             tn.Phuong = this.cbPhuong.SelectedValue + "";
-            tn.Quan = this.Quan.SelectedValue + "";
+            tn.Quan = this.cbQuan.SelectedValue + "";
             tn.LoaiHs = this.cbLoaiTiepNhan.SelectedValue + "";
             tn.NgayNhan = DateTime.Now;
             tn.GhiChu = this.txtGhiChu.Text;
@@ -150,11 +163,33 @@ namespace CallCenter.GUI.KhachHang
             }
 
 
+        }                 
+        private void cbQuan_ValueMemberChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cbPhuong.DataSource = CHeThongDuong.getListPhuong(int.Parse(cbQuan.SelectedValue.ToString()));
+                this.cbPhuong.DisplayMember = "Display";
+                this.cbPhuong.ValueMember = "Value";
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
-        private void txtGhiChu_TextChanged(object sender, EventArgs e)
+        private void cbQuan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                this.cbPhuong.DataSource = CHeThongDuong.getListPhuong(int.Parse(cbQuan.SelectedValue.ToString()));
+                this.cbPhuong.DisplayMember = "Display";
+                this.cbPhuong.ValueMember = "Value";
+            }
+            catch (Exception)
+            {
 
+            }
         }
     }
 }
