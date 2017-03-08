@@ -41,13 +41,13 @@
             this.mnuKhachHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnKhachHangGanMoi = new System.Windows.Forms.ToolStripMenuItem();
             this.mnBaoBe = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDonTiepNhan = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StripStatus_Version = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.StripStatus_HoTen = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mnuDonTiepNhan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,6 +161,13 @@
             this.mnBaoBe.Text = "Báo Bể";
             this.mnBaoBe.Click += new System.EventHandler(this.mnBaoBe_Click);
             // 
+            // mnuDonTiepNhan
+            // 
+            this.mnuDonTiepNhan.Name = "mnuDonTiepNhan";
+            this.mnuDonTiepNhan.Size = new System.Drawing.Size(218, 24);
+            this.mnuDonTiepNhan.Text = "Danh Sách Đơn Tiếp Nhận";
+            this.mnuDonTiepNhan.Click += new System.EventHandler(this.mnuDonTiepNhan_Click);
+            // 
             // tabControl
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -180,7 +187,7 @@
             this.toolStripStatusLabel4,
             this.toolStripStatusLabel5,
             this.StripStatus_HoTen});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 796);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 717);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
             this.statusStrip1.Size = new System.Drawing.Size(1604, 25);
@@ -212,18 +219,11 @@
             this.StripStatus_HoTen.Text = "Xin Chào:";
             this.StripStatus_HoTen.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // mnuDonTiepNhan
-            // 
-            this.mnuDonTiepNhan.Name = "mnuDonTiepNhan";
-            this.mnuDonTiepNhan.Size = new System.Drawing.Size(218, 24);
-            this.mnuDonTiepNhan.Text = "Danh Sách Đơn Tiếp Nhận";
-            this.mnuDonTiepNhan.Click += new System.EventHandler(this.mnuDonTiepNhan_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1604, 821);
+            this.ClientSize = new System.Drawing.Size(1604, 742);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
@@ -232,7 +232,7 @@
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1598, 859);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "frmMain";
             this.Text = "Trung Tâm Chăm Sóc Khách Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

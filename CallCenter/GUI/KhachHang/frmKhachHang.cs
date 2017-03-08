@@ -14,11 +14,23 @@ namespace CallCenter.GUI.KhachHang
 {
     public partial class frmKhachHang : Form
     {
-
+        CKinhDoanh _cKinhDoanh = new CKinhDoanh();
 
         public frmKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Kiểm Tra Xác Minh", gridViewKTXM);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Điều Chỉnh Biến Động", gridViewDCBD);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Cắt Tạm/Hủy Danh Bộ", gridViewCHDB);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Phiếu Hủy Danh Bộ", gridViewYeuCauCHDB);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Thảo Thư Trả Lời", gridViewTTTL);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Bấm Chì", gridViewBamChi);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Đóng Nước", gridViewDongNuoc);
+            gridControl.LevelTree.Nodes.Add("Chi Tiết Gian Lận", gridViewGianLan);
         }
 
         public void Search()
@@ -63,6 +75,7 @@ namespace CallCenter.GUI.KhachHang
             if (e.KeyChar == 13)
             {
                 Search();
+                gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(txtsearchDB.Text.Replace(" ", "").Replace("-", "")).Tables["Don"];
             }
         }
 
@@ -206,6 +219,8 @@ namespace CallCenter.GUI.KhachHang
             frmWeb F = new frmWeb(url);            
             F.ShowDialog();
         }
+
+        
   
     }
 }

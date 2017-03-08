@@ -125,13 +125,14 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WebKitBrowser">
-      <HintPath>C:\Users\LETANDAT\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WebKitBrowser.dll</HintPath>
+      <HintPath>..\..\..\Sources\WebKitBrowser.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\CCallCenter.cs" />
     <Compile Include="DAL\KhachHang\CGanMoi.cs" />
     <Compile Include="DAL\KhachHang\CKhachHang.cs" />
+    <Compile Include="DAL\KhachHang\CKinhDoanh.cs" />
     <Compile Include="DAL\KhachHang\CTiepNhanDon.cs" />
     <Compile Include="DAL\QuanTri\CHeThongDuong.cs" />
     <Compile Include="DAL\QuanTri\CMenu.cs" />
@@ -144,6 +145,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbCallCenter.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\dbKinhDoanh.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbKinhDoanh.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\DocSo.designer.cs">
       <AutoGen>True</AutoGen>
@@ -260,6 +266,11 @@
     <None Include="Database\dbCallCenter.dbml.layout">
       <DependentUpon>dbCallCenter.dbml</DependentUpon>
     </None>
+    <None Include="Database\dbKinhDoanh.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbKinhDoanh.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Database\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
@@ -271,6 +282,9 @@
     </None>
     <None Include="Database\ThuTien.dbml.layout">
       <DependentUpon>ThuTien.dbml</DependentUpon>
+    </None>
+    <None Include="Database\dbKinhDoanh.dbml.layout">
+      <DependentUpon>dbKinhDoanh.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
