@@ -67,6 +67,7 @@ namespace CallCenter.GUI.KhachHang
             {
                string dbo = gSearch.Rows[0].Cells["DC_DANHBA"].Value + "";
                 LoadThongTinDB(dbo.Replace(" ", ""));
+                gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(dbo.Replace(" ", "")).Tables["Don"];
             }
         }
 
@@ -75,7 +76,7 @@ namespace CallCenter.GUI.KhachHang
             if (e.KeyChar == 13)
             {
                 Search();
-                gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(txtsearchDB.Text.Replace(" ", "").Replace("-", "")).Tables["Don"];
+                
             }
         }
 
@@ -107,11 +108,14 @@ namespace CallCenter.GUI.KhachHang
                     SOTHAN.Text = khachhang.SOTHANDH;
                     VITRI.Text = khachhang.VITRIDHN;
                     txtDMA.Text = khachhang.MADMA;
-                    txtNhanVienDocSo.Text = CKhachHang.getNVDS(khachhang.LOTRINH.Substring(3, 2));
-                    
+
+                    txtNhanVienDocSo.Text = CKhachHang.getNVDS(khachhang.LOTRINH.Substring(2, 2));
+                    txtNVThuTien.Text = CKhachHang.getNVThuTien(khachhang.DANHBO);
                     loadghichu(khachhang.DANHBO);
                     loadHoaDon(khachhang.DANHBO);
                     loadDongNuoc(khachhang.DANHBO);
+                    loadCall(khachhang.DANHBO);
+                    gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(khachhang.DANHBO).Tables["Don"];
                 }
                 else
                 {
@@ -138,10 +142,14 @@ namespace CallCenter.GUI.KhachHang
                         //CHITHAN.Text = khachhanghuy.CHITHAN;
                         //CHIGOC.Text = khachhanghuy.CHIGOC;
                         //btCapNhatThongTin.Enabled = false;
+                        txtNhanVienDocSo.Text = CKhachHang.getNVDS(khachhanghuy.LOTRINH.Substring(2, 2));
+                        txtNVThuTien.Text = CKhachHang.getNVThuTien(khachhanghuy.DANHBO);
 
                         loadghichu(khachhanghuy.DANHBO);
                         loadHoaDon(khachhanghuy.DANHBO);
                         loadDongNuoc(khachhanghuy.DANHBO);
+                        loadCall(khachhanghuy.DANHBO);
+                         gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(khachhanghuy.DANHBO).Tables["Don"];
                     }
                     else
                     {
@@ -171,12 +179,17 @@ namespace CallCenter.GUI.KhachHang
         public void loadDongNuoc(string danhbo)
         {
             gDongNuoc.DataSource = DAL.KhachHang.CKhachHang.getDongMoiNuoc(danhbo);
-            Utilities.DataGridV.formatRows(gDongNuoc);
+             Utilities.DataGridV.formatRows(gDongNuoc);
         }
         public void loadHoaDon(string danhbo)
         {
             gHoaDon.DataSource = DAL.KhachHang.CKhachHang.getListHoaDonReport(danhbo, 12);
-            Utilities.DataGridV.formatRows(gHoaDon);
+             Utilities.DataGridV.formatRows(gHoaDon);
+        }
+        public void loadCall(string danhbo)
+        {
+            dataGridCall.DataSource = DAL.KhachHang.CKhachHang.getListTiepNhan(danhbo);
+            Utilities.DataGridV.formatRows(dataGridCall);
         }
 
         private void gSearch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -185,7 +198,6 @@ namespace CallCenter.GUI.KhachHang
             {
                 string db = gSearch.Rows[gSearch.CurrentRow.Index].Cells["DC_DANHBA"].Value + "";
                 LoadThongTinDB(db.Replace(" ",""));
-
             }
             catch (Exception)
             {
@@ -218,6 +230,11 @@ namespace CallCenter.GUI.KhachHang
             string url = "http://hp_g7/callcenter.aspx?add=" + this.TENDUONG.Text;
             frmWeb F = new frmWeb(url);            
             F.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         

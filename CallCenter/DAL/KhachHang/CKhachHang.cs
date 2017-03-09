@@ -97,6 +97,26 @@ namespace CallCenter.DAL.KhachHang
             return ds.Tables["TIEUTHU"];
         }
 
+        public static string getNVThuTien(string db)
+        {
+
+            try
+            {
+                string query = " SELECT  TOP(1) nd.HoTen + ' ['+ nd.DienThoai +']' ";
+                query += "  FROM  TT_NguoiDung nd,HOADON hd ";
+                query += " WHERE hd.MaNV_HanhThu=nd.MaND  and DANHBA='" + db + "' ";
+                query += " ORDER BY hd.Nam desc,CAST(hd.KY as int) DESC  ";
+                DataTable tb = getDataTableHoaDon(query);
+                return tb.Rows[0][0].ToString();
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+         
+
+
+        }
         public static DataTable search(string diachi, string dit)
         {
             DataTable tb = new DataTable();
@@ -160,7 +180,7 @@ namespace CallCenter.DAL.KhachHang
         {
             try
             {
-                DocSoDataContext db = new DocSoDataContext();
+                DocSoDataContext db = new DocSoDataContext();                 
                 DataSet ds = new DataSet();
 
                 string query = " SELECT NhanVienID ";
@@ -168,13 +188,25 @@ namespace CallCenter.DAL.KhachHang
                 query += " WHERE May=  '" + may + "' ";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-                return ds.Tables[0].Rows[0][0].ToString();
+                adapter.Fill(ds, "MayDS");
+                return ds.Tables["MayDS"].Rows[0][0].ToString();
             }
             catch (Exception ex)
             {
 
             }
             return "";
+        }
+
+        public static DataTable getListTiepNhan(string danhbo)
+        { 
+            string sql = " SELECT tn.SoHoSo,DienThoai,DanhBo,lt.TenLoai,NgayNhan, GhiChu,CreateBy,ChuyenHS,DonViChuyen,NgayChuyen,NgayXuLy,KetQuaXuLy,NhanVienXuLy,TenKH,(SoNha + ' ' + TenDuong ) as DiaChi ";
+            sql += "   FROM TiepNhan tn, LoaiTiepNhan lt ";
+            sql += "   WHERE tn.LoaiHs=lt.ID  ";
+            sql += " AND DanhBo='" + danhbo + "' ORDER BY  NgayNhan DESC ";
+          
+             return CCallCenter.getDataTable(sql);
+        
         }
     }
 }

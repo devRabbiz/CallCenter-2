@@ -54,6 +54,7 @@ namespace CallCenter.DAL.KhachHang
             return dtReturn;
         }
 
+
         public DataSet GetTienTrinhByDanhBo(string DanhBo)
         {
             try
@@ -934,7 +935,7 @@ namespace CallCenter.DAL.KhachHang
                         dtDon.ImportRow(itemRow);
                 }
 
-                dtDon.DefaultView.Sort = "CreateDate ASC";
+                dtDon.DefaultView.Sort = "CreateDate DESC";
                 ds.Tables.Add(dtDon.DefaultView.ToTable());
 
                 if (dtDon.Rows.Count > 0 && dtKTXM.Rows.Count > 0)

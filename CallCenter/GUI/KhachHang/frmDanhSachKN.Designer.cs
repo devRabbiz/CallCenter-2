@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cbPhongBan = new System.Windows.Forms.ComboBox();
             this.ckHoanTat = new System.Windows.Forms.CheckBox();
@@ -107,9 +107,9 @@
             this.groupControl1.Controls.Add(this.labelX9);
             this.groupControl1.Controls.Add(this.labelX8);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 250);
+            this.groupControl1.Location = new System.Drawing.Point(0, 238);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1086, 446);
+            this.groupControl1.Size = new System.Drawing.Size(1086, 458);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "THÔNG TIN TIẾP NHẬN";
             // 
@@ -160,14 +160,14 @@
             this.dataGrid.AllowUserToDeleteRows = false;
             this.dataGrid.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.ColumnHeadersHeight = 30;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.checkChon,
@@ -187,7 +187,7 @@
             this.TenKH,
             this.DiaChi});
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGrid.Location = new System.Drawing.Point(2, 93);
+            this.dataGrid.Location = new System.Drawing.Point(2, 105);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 10;
             this.dataGrid.RowTemplate.Height = 30;
@@ -208,8 +208,8 @@
             // sohoso
             // 
             this.sohoso.DataPropertyName = "SoHoSo";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sohoso.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sohoso.DefaultCellStyle = dataGridViewCellStyle2;
             this.sohoso.HeaderText = "Số Hồ Sơ";
             this.sohoso.Name = "sohoso";
             this.sohoso.Width = 95;
@@ -217,8 +217,8 @@
             // DanhBo
             // 
             this.DanhBo.DataPropertyName = "DanhBo";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DanhBo.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DanhBo.DefaultCellStyle = dataGridViewCellStyle3;
             this.DanhBo.HeaderText = "Danh Bộ";
             this.DanhBo.Name = "DanhBo";
             this.DanhBo.Width = 110;
@@ -226,9 +226,9 @@
             // DienThoai
             // 
             this.DienThoai.DataPropertyName = "DienThoai";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.Format = "dd/MM/yyyy";
-            this.DienThoai.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.DienThoai.DefaultCellStyle = dataGridViewCellStyle4;
             this.DienThoai.HeaderText = "Điện Thoại";
             this.DienThoai.Name = "DienThoai";
             this.DienThoai.Width = 120;
@@ -250,9 +250,9 @@
             // NgayNhan
             // 
             this.NgayNhan.DataPropertyName = "NgayNhan";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Format = "dd/MM/yyyy";
-            this.NgayNhan.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.NgayNhan.DefaultCellStyle = dataGridViewCellStyle5;
             this.NgayNhan.HeaderText = "Ngày Nhận";
             this.NgayNhan.Name = "NgayNhan";
             this.NgayNhan.Width = 110;
@@ -260,8 +260,8 @@
             // CreateBy
             // 
             this.CreateBy.DataPropertyName = "CreateBy";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CreateBy.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CreateBy.DefaultCellStyle = dataGridViewCellStyle6;
             this.CreateBy.HeaderText = "NV Nhận";
             this.CreateBy.Name = "CreateBy";
             this.CreateBy.Width = 120;
@@ -269,8 +269,8 @@
             // ChuyenHS
             // 
             this.ChuyenHS.DataPropertyName = "ChuyenHS";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ChuyenHS.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ChuyenHS.DefaultCellStyle = dataGridViewCellStyle7;
             this.ChuyenHS.HeaderText = "Chuyển Xử Lý";
             this.ChuyenHS.Name = "ChuyenHS";
             this.ChuyenHS.Width = 130;
@@ -278,17 +278,17 @@
             // NGAYCHUYENXL
             // 
             this.NGAYCHUYENXL.DataPropertyName = "NgayChuyen";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.Format = "dd/MM/yyyy";
-            this.NGAYCHUYENXL.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
+            this.NGAYCHUYENXL.DefaultCellStyle = dataGridViewCellStyle8;
             this.NGAYCHUYENXL.HeaderText = "Ngày Chuyển";
             this.NGAYCHUYENXL.Name = "NGAYCHUYENXL";
             // 
             // DOVICHUYEN
             // 
             this.DOVICHUYEN.DataPropertyName = "DonViChuyen";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOVICHUYEN.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOVICHUYEN.DefaultCellStyle = dataGridViewCellStyle9;
             this.DOVICHUYEN.HeaderText = "Đơn Vị Chuyển";
             this.DOVICHUYEN.Name = "DOVICHUYEN";
             // 

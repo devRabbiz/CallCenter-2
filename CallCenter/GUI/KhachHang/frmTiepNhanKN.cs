@@ -148,6 +148,7 @@ namespace CallCenter.GUI.KhachHang
             tn.Quan = this.cbQuan.SelectedValue + "";
             tn.LoaiHs = this.cbLoaiTiepNhan.SelectedValue + "";
             tn.NgayNhan = DateTime.Now;
+            tn.ChuyenHS = false;
             tn.GhiChu = this.txtGhiChu.Text;
             tn.CreateBy = CNguoiDung.HoTen + "";
             tn.CreateDate = DateTime.Now;

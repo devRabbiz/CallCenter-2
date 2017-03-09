@@ -62,18 +62,15 @@ namespace CallCenter.GUI.KhachHang
             for (int i = 0; i < dataGrid.Rows.Count; i++)
             {
 
-                if ("Flase".Equals(this.dataGrid.Rows[i].Cells["ChuyenHS"].Value + ""))
+                if (!bool.Parse(this.dataGrid.Rows[i].Cells["ChuyenHS"].Value + ""))
                 {
-                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.SandyBrown;
+                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); 
                 }
-                else if ("True".Equals(this.dataGrid.Rows[i].Cells["ChuyenHS"].Value + "") && "".Equals(this.dataGrid.Rows[i].Cells["NgayXuLy"].Value + ""))
+                else if (bool.Parse(this.dataGrid.Rows[i].Cells["ChuyenHS"].Value + "") && "".Equals(this.dataGrid.Rows[i].Cells["NgayXuLy"].Value + ""))
                 {
-                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Red;
+                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(149))))); 
                 }
-                else if ("".Equals(this.dataGrid.Rows[i].Cells["NgayXuLy"].Value + ""))
-                {
-                    dataGrid.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Yellow;
-                }
+                 
 
             }
         }
