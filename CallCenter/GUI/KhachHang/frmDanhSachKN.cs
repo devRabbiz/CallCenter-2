@@ -44,6 +44,8 @@ namespace CallCenter.GUI.KhachHang
             else if (ckHoanTat.Checked)
                 sql += " AND NgayXuLy IS NOT NULL ";
 
+            sql += " ORDER BY NgayNhan DESC";
+
             dataGrid.DataSource = CCallCenter.getDataTable(sql);
             // format();
             cbPhongBan.DataSource = CCallCenter.getDataTable("SELECT *  FROM PhongBan ");
@@ -103,7 +105,7 @@ namespace CallCenter.GUI.KhachHang
             else
                 MessageBox.Show(this, "Chuyển Hồ Sơ Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            MessageBox.Show(this, listDanhBa.Remove(listDanhBa.Length - 1, 1));
+           // MessageBox.Show(this, listDanhBa.Remove(listDanhBa.Length - 1, 1));
 
         }
 
@@ -114,7 +116,7 @@ namespace CallCenter.GUI.KhachHang
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE TiepNhan SET ChuyenHS='True',NgayChuyen=GETDATE(),NgayXuLy=GETDATE(),KetQuaXuLy=N'" + txtKetQuaXL.Text + "',NhanVienXuLy='" + CNguoiDung.HoTen + "'  WHERE SoHoSo='" + txtSoHoSo.Text + "'";
+            string sql = "UPDATE TiepNhan SET ChuyenHS='True',NgayChuyen=GETDATE(),NgayXuLy=GETDATE(),KetQuaXuLy=N'" + txtKetQuaXL.Text + "',NhanVienXuLy=N'" + CNguoiDung.HoTen + "'  WHERE SoHoSo='" + txtSoHoSo.Text + "'";
             if (CCallCenter.ExecuteCommand_(sql) > 0)
             { MessageBox.Show(this, "Cập Nhật Xử Lý Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information); pLoad(); }
             else

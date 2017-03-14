@@ -48,6 +48,7 @@
             this.cbLoaiTiepNhan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtSoDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.btClose = new DevComponents.DotNetBar.ButtonX();
             this.SuspendLayout();
             // 
             // btTiepNhan
@@ -283,11 +284,26 @@
             this.labelX7.TabIndex = 704;
             this.labelX7.Text = "Số Danh Bộ";
             // 
+            // btClose
+            // 
+            this.btClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btClose.Location = new System.Drawing.Point(281, 444);
+            this.btClose.Name = "btClose";
+            this.btClose.Size = new System.Drawing.Size(120, 29);
+            this.btClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btClose.TabIndex = 705;
+            this.btClose.Text = "Đóng";
+            this.btClose.Click += new System.EventHandler(this.btClose_Click);
+            // 
             // frmTiepNhanKN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 504);
+            this.Controls.Add(this.btClose);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.cbQuan);
             this.Controls.Add(this.cbLoaiTiepNhan);
@@ -337,5 +353,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiTiepNhan;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoDanhBo;
         private DevComponents.DotNetBar.LabelX labelX7;
+        private DevComponents.DotNetBar.ButtonX btClose;
     }
 }

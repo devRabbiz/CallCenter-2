@@ -25,15 +25,24 @@ namespace CallCenter.DAL.KhachHang
             //}
             return data.ToList();
         }
+        static string getMoth()
+        {
+            string s;
+            if (DateTime.Now.Month < 10)
+                s = "0" + DateTime.Now.Month;
+            else
+                s = DateTime.Now.Month + "";
+            return s;
 
+        }
         public static string IdentityBienNhan()
         {
             string loaihs = "CT";
-            string year = DateTime.Now.Year.ToString().Substring(2);
+            string year = DateTime.Now.Year.ToString().Substring(2) + getMoth();
             string kytumacdinh = year + loaihs;
 
 
-            string id = kytumacdinh + "000001";
+            string id = kytumacdinh + "0001";
             try
             {
 
@@ -46,20 +55,20 @@ namespace CallCenter.DAL.KhachHang
                 adapter.Fill(table);
                 if (table.Rows.Count > 0)
                 {
-                    if (table.Rows[0][0].ToString().Trim().Substring(0, 2).Equals(year))
+                    if (table.Rows[0][0].ToString().Trim().Substring(0, 2).Equals(year.Substring(0, 2)))
                     {
                         int number = 1;
 
-                        id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "000000", number) + "";
+                        id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "0000", number) + "";
                     }
                     else
                     {
-                        id = obj.ID(year + loaihs, year + loaihs + "000000", "000000") + "";
+                        id = obj.ID(year + loaihs, year + loaihs + "0000", "0000") + "";
                     }
                 }
                 else
                 {
-                    id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "000000") + "";
+                    id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "0000") + "";
                 }
 
                 db.Connection.Close();

@@ -192,5 +192,10 @@ namespace CallCenter.GUI.KhachHang
 
             }
         }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

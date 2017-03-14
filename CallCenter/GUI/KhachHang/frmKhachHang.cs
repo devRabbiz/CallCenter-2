@@ -33,6 +33,14 @@ namespace CallCenter.GUI.KhachHang
             gridControl.LevelTree.Nodes.Add("Chi Tiết Gian Lận", gridViewGianLan);
         }
 
+        public  void searchBaoThay(string db)
+        {
+            string sql = "SELECT * FROM V_SEARCH WHERE DHN_DANHBO IS NOT NULL ";
+            sql += " AND DHN_DANHBO='" + db + "'";
+            sql += " ORDER BY DHN_NGAYBAOTHAY DESC ";
+            dataBangKe.DataSource= DAL.KhachHang.CKhachHang.getDataTable(sql);
+        }
+
         public void Search()
         {
             DataTable tb = new DataTable();
@@ -91,12 +99,12 @@ namespace CallCenter.GUI.KhachHang
                 {
                     rDanhBo.Text = khachhang.DANHBO;
                     LOTRINH.Text = khachhang.LOTRINH;
-                    DOT.Text = khachhang.LOTRINH.Substring(1,2);
+                    DOT.Text = khachhang.LOTRINH.Substring(1, 2);
                     HOPDONG.Text = khachhang.HOPDONG;
                     HOTEN.Text = khachhang.HOTEN;
-                    TENDUONG.Text =khachhang.SONHA + ' ' + khachhang.TENDUONG;
+                    TENDUONG.Text = khachhang.SONHA + ' ' + khachhang.TENDUONG;
                     txtDienThoai.Text = khachhang.DIENTHOAI;
-                    QUAN.Text = khachhang.QUAN + "."+khachhang.PHUONG;
+                    QUAN.Text = khachhang.QUAN + "." + khachhang.PHUONG;
                     txtHieuLuc.Text = String.Format("{0:00}", khachhang.KY) + "/" + khachhang.NAM;
                     GIABIEU.Text = khachhang.GIABIEU;
                     DINHMUC.Text = khachhang.DINHMUC;
@@ -115,6 +123,7 @@ namespace CallCenter.GUI.KhachHang
                     loadHoaDon(khachhang.DANHBO);
                     loadDongNuoc(khachhang.DANHBO);
                     loadCall(khachhang.DANHBO);
+                    searchBaoThay(khachhang.DANHBO);
                     gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(khachhang.DANHBO).Tables["Don"];
                 }
                 else
@@ -127,8 +136,8 @@ namespace CallCenter.GUI.KhachHang
                         DOT.Text = khachhanghuy.DOT;
                         HOPDONG.Text = khachhanghuy.HOPDONG;
                         HOTEN.Text = khachhanghuy.HOTEN;
-                        TENDUONG.Text = khachhanghuy.SONHA + " " +khachhanghuy.TENDUONG;
-                         QUAN.Text = khachhanghuy.QUAN + "  " +khachhanghuy.PHUONG;
+                        TENDUONG.Text = khachhanghuy.SONHA + " " + khachhanghuy.TENDUONG;
+                        QUAN.Text = khachhanghuy.QUAN + "  " + khachhanghuy.PHUONG;
                         txtHieuLuc.Text = "Hết HL " + khachhanghuy.HIEULUCHUY;
                         GIABIEU.Text = khachhanghuy.GIABIEU;
                         DINHMUC.Text = khachhanghuy.DINHMUC;
@@ -149,7 +158,8 @@ namespace CallCenter.GUI.KhachHang
                         loadHoaDon(khachhanghuy.DANHBO);
                         loadDongNuoc(khachhanghuy.DANHBO);
                         loadCall(khachhanghuy.DANHBO);
-                         gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(khachhanghuy.DANHBO).Tables["Don"];
+                        searchBaoThay(khachhanghuy.DANHBO);
+                        gridControl.DataSource = _cKinhDoanh.GetTienTrinhByDanhBo(khachhanghuy.DANHBO).Tables["Don"];
                     }
                     else
                     {
