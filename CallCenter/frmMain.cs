@@ -10,6 +10,7 @@ using CallCenter.DAL.QuanTri;
 using CallCenter.GUI.HeThong;
 using CallCenter.GUI.QuanTri;
 using CallCenter.GUI.KhachHang;
+using CallCenter.GUI.TCTB;
 
 namespace CallCenter
 {
@@ -17,6 +18,7 @@ namespace CallCenter
     {
         public frmMain()
         {
+           
             InitializeComponent();
         }
 
@@ -217,6 +219,18 @@ namespace CallCenter
         private void mnuDonTiepNhan_Click(object sender, EventArgs e)
         {
             frmDanhSachKN frm = new frmDanhSachKN();
+            OpenForm(frm);
+        }
+
+        private void mnThiCongTB_Click(object sender, EventArgs e)
+        {
+            frmDanhSachHS frm = new frmDanhSachHS("TCTB");
+            OpenForm(frm);
+        }
+
+        private void mnBaoBe_Click_1(object sender, EventArgs e)
+        {
+            frmBaoBe frm = new frmBaoBe();
             OpenForm(frm);
         }
 

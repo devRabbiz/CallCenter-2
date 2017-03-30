@@ -10,20 +10,24 @@ using CallCenter.DAL.QuanTri;
 using CallCenter.Database;
 using CallCenter.DAL.KhachHang;
 using CallCenter.DAL;
+using System.Media;
 
-namespace CallCenter.GUI.KhachHang
+namespace CallCenter.GUI.TCTB
 {
-    public partial class frmDanhSachKN : Form
+    public partial class frmDanhSachHS : Form
     {
+        string phong = "";
+        int _ticks = 0;
 
-        public frmDanhSachKN()
+        public frmDanhSachHS(string phongban)
         {
             InitializeComponent();
             dateTuNgay.ValueObject = DateTime.Now.Date;
             dateDenNgay.ValueObject = DateTime.Now.Date;
-            cbLoai.SelectedIndex = 0;
-            pLoad();
+            phong = phongban;
             timer1.Start();
+             
+            pLoad();
         }
 
         public void pLoad()
@@ -32,11 +36,7 @@ namespace CallCenter.GUI.KhachHang
             sql += "   FROM TiepNhan tn, LoaiTiepNhan lt ";
             sql += "   WHERE tn.LoaiHs=lt.ID  ";
             sql += " AND CONVERT(DATE,NgayNhan,103) BETWEEN CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
-
-            if (cbLoai.SelectedIndex == 0)
-                sql += " AND LoaiTN='KH'";
-            else
-                sql += " AND LoaiTN='GM'";
+            sql += " AND DonViChuyen='" + phong + "'";
 
             if (ckChuaChuyen.Checked)
                 sql += " AND (ChuyenHS is NULL OR ChuyenHS='False')";
@@ -48,13 +48,8 @@ namespace CallCenter.GUI.KhachHang
             sql += " ORDER BY NgayNhan DESC";
 
             dataGrid.DataSource = CCallCenter.getDataTable(sql);
-            // format();
-            cbPhongBan.DataSource = CCallCenter.getDataTable("SELECT *  FROM PhongBan ");
-            cbPhongBan.DisplayMember = "TenPhong";
-            cbPhongBan.ValueMember = "MaPhong";
+
         }
-
-
         private void check(object sender, EventArgs e)
         {
             pLoad();
@@ -88,28 +83,6 @@ namespace CallCenter.GUI.KhachHang
             pLoad();
         }
 
-        private void btChuyenHS_Click(object sender, EventArgs e)
-        {
-            string listDanhBa = "";
-            int flag = 0;
-            for (int i = 0; i < dataGrid.Rows.Count; i++)
-            {
-                if ("True".Equals(this.dataGrid.Rows[i].Cells["checkChon"].Value + ""))
-                {
-                    flag++;
-                    listDanhBa += ("'" + (this.dataGrid.Rows[i].Cells["sohoso"].Value + "").Replace(" ", "") + "',");
-                }
-            }
-            string sql = "UPDATE TiepNhan SET ChuyenHS='True',Mess='True' ,NgayChuyen=GETDATE(),DonViChuyen='" + cbPhongBan.SelectedValue + "'   WHERE SoHoSo IN (" + listDanhBa.Remove(listDanhBa.Length - 1, 1) + ") ";
-            if (CCallCenter.ExecuteCommand_(sql) > 0)
-            { MessageBox.Show(this, "Chuyển Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information); pLoad(); }
-            else
-                MessageBox.Show(this, "Chuyển Hồ Sơ Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            // MessageBox.Show(this, listDanhBa.Remove(listDanhBa.Length - 1, 1));
-
-        }
-
         private void dataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             format();
@@ -117,7 +90,7 @@ namespace CallCenter.GUI.KhachHang
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE TiepNhan SET ChuyenHS='True',NgayChuyen=GETDATE(),NgayXuLy=GETDATE(),KetQuaXuLy=N'" + txtKetQuaXL.Text + "',NhanVienXuLy=N'" + CNguoiDung.HoTen + "'  WHERE SoHoSo='" + txtSoHoSo.Text + "'";
+            string sql = "UPDATE TiepNhan SET NgayXuLy=GETDATE(),KetQuaXuLy=N'" + txtKetQuaXL.Text + "',NhanVienXuLy=N'" + CNguoiDung.HoTen + "'  WHERE SoHoSo='" + txtSoHoSo.Text + "'";
             if (CCallCenter.ExecuteCommand_(sql) > 0)
             { MessageBox.Show(this, "Cập Nhật Xử Lý Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information); pLoad(); }
             else
@@ -152,34 +125,23 @@ namespace CallCenter.GUI.KhachHang
 
                 }
             }
-
         }
 
-        private void cbLoai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pLoad();
-        }
-
-        int _ticks = 0;
         public void alrt()
         {
-
-            string sql = " SELECT tn.SoHoSo,DienThoai,DanhBo,lt.TenLoai,NgayNhan, GhiChu,CreateBy,ChuyenHS,DonViChuyen,NgayChuyen,NgayXuLy,KetQuaXuLy,NhanVienXuLy,TenKH,(SoNha + ' ' + TenDuong ) as DiaChi ";
-            sql += "   FROM TiepNhan tn, LoaiTiepNhan lt ";
-            sql += "   WHERE tn.LoaiHs=lt.ID  ";
-            sql += " AND  DATEDIFF(DD,NgayNhan,GETDATE())>3 ";
-            sql += "  AND NgayXuLy IS  NULL ";
-            sql += " ORDER BY NgayNhan DESC";
-
-
-            DataTable tb = CCallCenter.getDataTable(sql);
+           
+            string sql2 = " SELECT tn.SoHoSo,DienThoai,DanhBo,lt.TenLoai,NgayNhan, GhiChu,CreateBy ";
+            sql2 += "   FROM TiepNhan tn, LoaiTiepNhan lt ";
+            sql2 += "   WHERE tn.LoaiHs=lt.ID  ";
+            //sql2 += " AND CONVERT(DATE,NgayNhan,103) BETWEEN CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateTuNgay.Value.Date) + "',103) AND CONVERT(DATE,'" + Utilities.DateToString.NgayVN(dateDenNgay.Value.Date) + "',103) ";
+            sql2 += " AND DonViChuyen='TCTB' AND Mess='True' ";
+            DataTable tb = CCallCenter.getDataTable(sql2);
             if (tb.Rows.Count > 0)
             {
-                MessChuaXL of = new MessChuaXL(tb);
+                Mess of = new Mess(tb);
                 timer1.Stop();
-                of.ShowDialog();
-                //if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK  )
-                //    timer1.Start();
+                if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK  )
+                    timer1.Start();
             }
         }
 
@@ -188,6 +150,11 @@ namespace CallCenter.GUI.KhachHang
             _ticks++;
             if (_ticks % 2 == 0)
                 alrt();
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            alrt();
         }
     }
 }

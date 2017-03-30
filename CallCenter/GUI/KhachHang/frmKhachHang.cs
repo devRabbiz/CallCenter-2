@@ -265,10 +265,7 @@ namespace CallCenter.GUI.KhachHang
             F.ShowDialog();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+         
 
         
   

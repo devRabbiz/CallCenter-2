@@ -2846,6 +2846,14 @@ namespace CallCenter.Database
 		
 		private System.Nullable<System.DateTime> _NgayChuyen;
 		
+		private System.Nullable<System.DateTime> _NgayXuLy;
+		
+		private string _KetQuaXuLy;
+		
+		private string _NhanVienXuLy;
+		
+		private System.Nullable<bool> _Mess;
+		
 		private System.Nullable<System.DateTime> _CreateDate;
 		
 		private string _CreateBy;
@@ -2888,6 +2896,14 @@ namespace CallCenter.Database
     partial void OnDonViChuyenChanged();
     partial void OnNgayChuyenChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayChuyenChanged();
+    partial void OnNgayXuLyChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayXuLyChanged();
+    partial void OnKetQuaXuLyChanging(string value);
+    partial void OnKetQuaXuLyChanged();
+    partial void OnNhanVienXuLyChanging(string value);
+    partial void OnNhanVienXuLyChanged();
+    partial void OnMessChanging(System.Nullable<bool> value);
+    partial void OnMessChanged();
     partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
     partial void OnCreateDateChanged();
     partial void OnCreateByChanging(string value);
@@ -3163,7 +3179,7 @@ namespace CallCenter.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonViChuyen", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonViChuyen", DbType="VarChar(20)")]
 		public string DonViChuyen
 		{
 			get
@@ -3199,6 +3215,86 @@ namespace CallCenter.Database
 					this._NgayChuyen = value;
 					this.SendPropertyChanged("NgayChuyen");
 					this.OnNgayChuyenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayXuLy", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayXuLy
+		{
+			get
+			{
+				return this._NgayXuLy;
+			}
+			set
+			{
+				if ((this._NgayXuLy != value))
+				{
+					this.OnNgayXuLyChanging(value);
+					this.SendPropertyChanging();
+					this._NgayXuLy = value;
+					this.SendPropertyChanged("NgayXuLy");
+					this.OnNgayXuLyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KetQuaXuLy", DbType="NVarChar(250)")]
+		public string KetQuaXuLy
+		{
+			get
+			{
+				return this._KetQuaXuLy;
+			}
+			set
+			{
+				if ((this._KetQuaXuLy != value))
+				{
+					this.OnKetQuaXuLyChanging(value);
+					this.SendPropertyChanging();
+					this._KetQuaXuLy = value;
+					this.SendPropertyChanged("KetQuaXuLy");
+					this.OnKetQuaXuLyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NhanVienXuLy", DbType="NVarChar(50)")]
+		public string NhanVienXuLy
+		{
+			get
+			{
+				return this._NhanVienXuLy;
+			}
+			set
+			{
+				if ((this._NhanVienXuLy != value))
+				{
+					this.OnNhanVienXuLyChanging(value);
+					this.SendPropertyChanging();
+					this._NhanVienXuLy = value;
+					this.SendPropertyChanged("NhanVienXuLy");
+					this.OnNhanVienXuLyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mess", DbType="Bit")]
+		public System.Nullable<bool> Mess
+		{
+			get
+			{
+				return this._Mess;
+			}
+			set
+			{
+				if ((this._Mess != value))
+				{
+					this.OnMessChanging(value);
+					this.SendPropertyChanging();
+					this._Mess = value;
+					this.SendPropertyChanged("Mess");
+					this.OnMessChanged();
 				}
 			}
 		}
